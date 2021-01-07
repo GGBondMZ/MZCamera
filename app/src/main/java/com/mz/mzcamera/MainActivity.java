@@ -53,7 +53,8 @@ public class MainActivity extends Activity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setVisibility(View.GONE);
+                imageView.setVisibility(View.INVISIBLE);
+                surfaceView.setVisibility(View.VISIBLE);
                 startCamera();
             }
         });
@@ -161,7 +162,7 @@ public class MainActivity extends Activity {
             mBitmapDrawable = new BitmapDrawable(getResources(), bitmap);
             imageView.setBackgroundDrawable(mBitmapDrawable);
             imageView.setVisibility(View.VISIBLE);
-            surfaceView.setVisibility(View.GONE);
+            surfaceView.setVisibility(View.INVISIBLE);
         }
     }
 }
