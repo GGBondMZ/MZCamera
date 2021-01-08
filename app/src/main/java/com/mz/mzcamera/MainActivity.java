@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
             try {
                 Camera.Parameters parameters = mCamera.getParameters();
                 parameters.setPictureFormat(PixelFormat.JPEG);
-                parameters.setPictureSize(1920,1080);
+                parameters.setPictureSize(1920, 1080);
                 mCamera.setParameters(parameters);
                 mCamera.startPreview();
             } catch (Exception e) {
@@ -151,13 +151,13 @@ public class MainActivity extends Activity {
             options.inPurgeable = true;
             options.inInputShareable = true;
 
-            mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length,options);
+            mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
 
             Matrix m = new Matrix();
-            m.postScale(1,-1);
-            m.postScale(-1,1);
+            m.postScale(1, -1);
+            m.postScale(-1, 1);
             m.postRotate(-90);
-            Bitmap bitmap = Bitmap.createBitmap(mBitmap,0,0,mBitmap.getWidth(),mBitmap.getHeight(),m,true);
+            Bitmap bitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), m, true);
 
             mBitmapDrawable = new BitmapDrawable(getResources(), bitmap);
             imageView.setBackgroundDrawable(mBitmapDrawable);
