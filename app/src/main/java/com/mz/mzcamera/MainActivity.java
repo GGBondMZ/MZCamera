@@ -58,7 +58,6 @@ public class MainActivity extends Activity {
                 startCamera();
             }
         });
-
     }
 
     private final class SurfaceCallback implements SurfaceHolder.Callback {
@@ -152,7 +151,7 @@ public class MainActivity extends Activity {
             options.inPurgeable = true;
             options.inInputShareable = true;
 
-            mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+            mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
 
             Matrix m = new Matrix();
             m.postScale(1, -1);
@@ -164,6 +163,8 @@ public class MainActivity extends Activity {
             imageView.setBackgroundDrawable(mBitmapDrawable);
             imageView.setVisibility(View.VISIBLE);
             surfaceView.setVisibility(View.INVISIBLE);
+            
         }
     }
+
 }
