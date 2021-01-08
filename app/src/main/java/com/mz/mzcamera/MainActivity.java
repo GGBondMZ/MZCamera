@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
     private Bitmap mBitmap;
     private BitmapDrawable mBitmapDrawable;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +46,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 takePicture();
+
             }
         });
 
@@ -127,6 +127,7 @@ public class MainActivity extends Activity {
                 public void onAutoFocus(boolean success, Camera camera) {
                     if (success) {
                         mCamera.takePicture(null, null, new MyPictureCallback());
+
                     } else {
                         Toast.makeText(MainActivity.this, "对焦失败", Toast.LENGTH_SHORT).show();
                     }
@@ -151,7 +152,7 @@ public class MainActivity extends Activity {
             options.inPurgeable = true;
             options.inInputShareable = true;
 
-            mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
+            mBitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
 
             Matrix m = new Matrix();
             m.postScale(1, -1);
