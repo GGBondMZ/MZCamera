@@ -6,6 +6,8 @@ This is an Android camera.
 
 #### 软件架构
 软件架构说明：
+1.一个Mainctivity用来显示相机界面以及拍照按钮
+2.其他暂无
 
 #### 安装教程
 
